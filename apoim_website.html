@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Abbie Peal Okia Memorial Institute – Liberia</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0D1F3C;--blue:#1A3A6B;--mid:#2355A0;--light:#4A7FD4;
+  --white:#FFFFFF;--offwhite:#F4F8FF;--gold:#F0B429;--gold2:#D4990A;
+  --red:#BF0A30;--gray:#6B7280;--lgray:#E8EFF9;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--navy);overflow-x:hidden;}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:rgba(13,31,60,0.98);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 4%;height:76px;border-bottom:3px solid var(--gold);
+}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.nav-logo svg{width:54px;height:54px;flex-shrink:0;}
+.nav-brand-name{font-family:'Playfair Display',serif;font-size:15px;color:var(--white);line-height:1.2;font-weight:700;}
+.nav-brand-sub{font-size:9px;color:var(--gold);letter-spacing:3px;font-weight:600;text-transform:uppercase;margin-top:2px;}
+nav ul{list-style:none;display:flex;gap:28px;}
+nav ul a{color:rgba(255,255,255,.82);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:1px;text-transform:uppercase;transition:color .2s;}
+nav ul a:hover{color:var(--gold);}
+.nav-btn{background:var(--gold);color:var(--navy);padding:10px 22px;border-radius:4px;font-weight:700;font-size:12px;text-decoration:none;letter-spacing:.5px;white-space:nowrap;}
+.nav-btn:hover{background:var(--gold2);}
+
+/* Liberia stripe */
+.stripe{position:fixed;top:76px;left:0;right:0;z-index:199;display:flex;height:5px;}
+.sr{background:var(--red);flex:1;}.sw{background:var(--white);flex:1;}.sb{background:var(--blue);flex:1;}
+
+/* ─── HERO ─── */
+.hero{
+  min-height:100vh;background:var(--navy);
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;
+  padding:110px 5% 80px;
+}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=80');background-size:cover;background-position:center;opacity:.1;}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,31,60,.97) 50%,rgba(26,58,107,.9) 100%);}
+.hero-inner{position:relative;z-index:2;display:flex;align-items:center;gap:72px;width:100%;}
+.hero-logo-wrap{flex-shrink:0;animation:fadeUp .7s ease both;}
+.hero-logo-wrap svg{width:280px;height:280px;filter:drop-shadow(0 0 32px rgba(240,180,41,.18));}
+.hero-text{flex:1;animation:fadeUp .8s .15s ease both;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:7px 16px;border-radius:2px;margin-bottom:28px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5.5vw,68px);color:var(--white);line-height:1.05;margin-bottom:10px;font-weight:900;}
+.hero h1 span{color:var(--gold);}
+.hero-tagline{font-size:13px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:20px;}
+.hero p{color:rgba(255,255,255,.72);font-size:16px;line-height:1.8;max-width:500px;margin-bottom:36px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px;}
+.btn-gold{background:var(--gold);color:var(--navy);padding:14px 32px;border-radius:4px;font-weight:700;font-size:14px;text-decoration:none;transition:background .15s;}
+.btn-gold:hover{background:var(--gold2);}
+.btn-ghost{border:2px solid rgba(255,255,255,.35);color:var(--white);padding:14px 32px;border-radius:4px;font-weight:600;font-size:14px;text-decoration:none;transition:border-color .2s;}
+.btn-ghost:hover{border-color:var(--white);}
+.hero-stats{display:flex;gap:36px;flex-wrap:wrap;}
+.stat strong{display:block;font-family:'Playfair Display',serif;font-size:42px;color:var(--white);line-height:1;}
+.stat span{font-size:10px;color:var(--gold);font-weight:700;letter-spacing:2px;text-transform:uppercase;}
+
+/* ─── SECTIONS ─── */
+section{padding:96px 5%;}
+.stag{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:10px;}
+.stag::before{content:'— ';}
+h2{font-family:'Playfair Display',serif;font-size:clamp(34px,4.5vw,52px);line-height:1.1;color:var(--navy);margin-bottom:14px;font-weight:700;}
+.sub{font-size:16px;color:var(--gray);line-height:1.8;max-width:540px;margin-bottom:52px;}
+
+/* ─── ABOUT ─── */
+.about{background:var(--offwhite);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.about-imgbox{border-radius:14px;overflow:hidden;height:480px;position:relative;}
+.about-imgbox img{width:100%;height:100%;object-fit:cover;}
+.about-badge{position:absolute;bottom:20px;left:20px;background:var(--gold);color:var(--navy);padding:14px 20px;border-radius:8px;font-weight:800;font-size:14px;line-height:1.5;}
+.flag-bar{position:absolute;top:0;left:0;right:0;height:8px;display:flex;}
+.flag-bar div{flex:1;}
+.values{display:flex;flex-direction:column;gap:20px;margin-top:28px;}
+.vi{display:flex;gap:14px;align-items:flex-start;}
+.vico{width:44px;height:44px;flex-shrink:0;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.vi h4{font-size:15px;font-weight:700;margin-bottom:4px;color:var(--navy);}
+.vi p{font-size:13px;color:var(--gray);line-height:1.65;}
+
+/* ─── FACILITIES ─── */
+.fac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.fcard{background:var(--white);border-radius:14px;overflow:hidden;border:1px solid var(--lgray);transition:transform .25s,box-shadow .25s;}
+.fcard:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(26,58,107,.13);}
+.fcard.wide{grid-column:span 2;}
+.fcard img{width:100%;height:220px;object-fit:cover;display:block;}
+.fcard.wide img{height:280px;}
+.fcard-body{padding:22px 24px 26px;}
+.fcard-body h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.fcard-body p{font-size:13px;color:var(--gray);line-height:1.7;}
+.ftag{display:inline-block;margin-top:12px;background:var(--lgray);color:var(--mid);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;}
+
+/* ─── GALLERY ─── */
+.gallery{overflow:hidden;}
+.gallery-strip{display:flex;height:260px;}
+.gallery-strip img{flex:1;min-width:0;object-fit:cover;opacity:.85;transition:flex .4s ease,opacity .3s;}
+.gallery-strip img:hover{flex:3;opacity:1;}
+
+/* ─── ACADEMICS ─── */
+.academics{background:var(--offwhite);}
+.prog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.pcard{background:var(--white);border-radius:12px;padding:24px 20px;border-left:4px solid var(--blue);transition:border-color .2s,transform .2s;}
+.pcard:hover{border-color:var(--gold);transform:translateY(-4px);}
+.pcard .icon{font-size:28px;margin-bottom:12px;}
+.pcard h4{font-size:14px;font-weight:700;margin-bottom:6px;color:var(--navy);}
+.pcard p{font-size:12px;color:var(--gray);line-height:1.65;}
+
+/* ─── FEES ─── */
+.fees{background:var(--navy);}
+.fees h2{color:var(--white);}
+.fees .stag{color:var(--gold);}
+.fees .sub{color:rgba(255,255,255,.6);}
+.fees-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.feecard{border-radius:14px;padding:36px 28px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);position:relative;overflow:hidden;transition:border-color .2s;}
+.feecard.feat{background:var(--blue);border-color:var(--gold);}
+.feecard.feat::before{content:'MOST POPULAR';position:absolute;top:18px;right:-34px;background:var(--gold);color:var(--navy);font-size:9px;font-weight:700;letter-spacing:2px;padding:5px 48px;transform:rotate(45deg);}
+.ftier{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.fcurr{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:4px;}
+.famt{font-family:'Playfair Display',serif;font-size:54px;color:var(--white);line-height:1;margin-bottom:4px;font-weight:700;}
+.fperiod{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:24px;}
+.fitems{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.fitems li{font-size:13px;color:rgba(255,255,255,.75);display:flex;gap:9px;align-items:flex-start;}
+.fitems li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;}
+.fbtn{display:block;margin-top:26px;text-align:center;background:var(--gold);color:var(--navy);padding:13px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;}
+.fbtn.out{background:transparent;border:1px solid rgba(255,255,255,.3);color:var(--white);}
+.fee-note{text-align:center;margin-top:34px;color:rgba(255,255,255,.45);font-size:13px;line-height:2.2;}
+
+/* ─── TESTIMONIALS ─── */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.tcard{background:var(--offwhite);border-radius:14px;padding:30px 26px;border-top:4px solid var(--blue);}
+.tcard .quote{font-size:52px;color:var(--lgray);font-family:Georgia,serif;line-height:.9;margin-bottom:10px;}
+.tcard p{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:20px;font-style:italic;}
+.tcard .author{display:flex;align-items:center;gap:12px;}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:20px;}
+.aname{font-size:14px;font-weight:700;color:var(--navy);}
+.arole{font-size:11px;color:var(--gray);}
+
+/* ─── CTA ─── */
+.cta{background:linear-gradient(135deg,var(--blue) 0%,var(--navy) 100%);padding:80px 5%;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.cta h2{color:var(--white);margin-bottom:12px;}
+.cta p{color:rgba(255,255,255,.65);font-size:15px;max-width:440px;}
+.cta-btns{display:flex;flex-direction:column;gap:12px;min-width:240px;}
+.cta-call{background:var(--gold);color:var(--navy);padding:16px 32px;border-radius:6px;font-weight:700;font-size:15px;text-decoration:none;text-align:center;}
+.cta-wa{border:2px solid rgba(255,255,255,.35);color:var(--white);padding:14px 32px;border-radius:6px;font-weight:600;font-size:14px;text-decoration:none;text-align:center;}
+
+/* ─── FOOTER ─── */
+footer{background:var(--navy);color:rgba(255,255,255,.6);padding:64px 5% 32px;}
+.footer-flag{display:flex;height:6px;margin-bottom:48px;border-radius:3px;overflow:hidden;}
+.footer-flag .fr{background:var(--red);flex:1;}.footer-flag .fw{background:var(--white);flex:1;}.footer-flag .fb{background:var(--mid);flex:1;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-brand p{font-size:13px;line-height:1.8;max-width:280px;margin-top:14px;}
+footer h5{color:var(--white);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+footer ul a{color:rgba(255,255,255,.55);text-decoration:none;font-size:13px;transition:color .2s;}
+footer ul a:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;font-size:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:1000px){
+  .hero-inner{flex-direction:column;text-align:center;}
+  .hero-logo-wrap svg{width:200px;height:200px;}
+  .hero-stats{justify-content:center;}
+  .hero-btns{justify-content:center;}
+  .about-grid,.fees-grid,.fac-grid,.prog-grid,.tgrid{grid-template-columns:1fr;}
+  .fcard.wide{grid-column:span 1;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  nav ul{display:none;}
+}
+@media(max-width:560px){
+  .footer-grid{grid-template-columns:1fr;}
+  .gallery-strip{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- INLINE LOGO SVG DEFINITION (reused via <use>) -->
+<svg style="display:none" id="logo-defs">
+  <symbol id="apoim-logo" viewBox="0 0 200 200">
+    <!-- Outer navy ring -->
+    <circle cx="100" cy="100" r="98" fill="#0D1F3C"/>
+    <circle cx="100" cy="100" r="98" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+    <!-- Blue inner band -->
+    <circle cx="100" cy="100" r="91" fill="#1A3A6B"/>
+    <!-- Gold ring -->
+    <circle cx="100" cy="100" r="86" fill="none" stroke="#F0B429" stroke-width="2"/>
+    <!-- White face -->
+    <circle cx="100" cy="100" r="80" fill="#FFFFFF"/>
+    <!-- Light blue tint face -->
+    <circle cx="100" cy="100" r="78" fill="#EEF4FF"/>
+
+    <!-- SHIELD -->
+    <path d="M100 46 L148 64 L148 118 Q148 158 100 172 Q52 158 52 118 L52 64 Z" fill="#1A3A6B" stroke="#0D1F3C" stroke-width="1"/>
+    <!-- Shield dividers -->
+    <line x1="52" y1="91" x2="148" y2="91" stroke="#FFFFFF" stroke-width="1.5"/>
+    <line x1="100" y1="46" x2="100" y2="172" stroke="#FFFFFF" stroke-width="1.5"/>
+
+    <!-- TOP-LEFT: gold Liberia star -->
+    <polygon points="76,55 79,65 90,65 81,71 84,81 76,75 68,81 71,71 62,65 73,65" fill="#F0B429"/>
+
+    <!-- TOP-RIGHT: torch of knowledge -->
+    <rect x="104" y="57" width="8" height="20" rx="1.5" fill="#F0B429"/>
+    <ellipse cx="108" cy="55" rx="5" ry="7" fill="#F0B429" stroke="#FFFFFF" stroke-width="0.8"/>
+    <ellipse cx="108" cy="53" rx="3" ry="4" fill="#FFFFFF"/>
+    <rect x="106" y="77" width="4" height="3" rx="1" fill="#F0B429"/>
+    <rect x="103" y="80" width="10" height="2" rx="1" fill="#F0B429"/>
+
+    <!-- BOTTOM HALF: LARGE GOLD CROSS -->
+    <!-- Vertical bar -->
+    <rect x="92" y="93" width="16" height="76" rx="2" fill="#F0B429"/>
+    <!-- Horizontal bar -->
+    <rect x="62" y="107" width="76" height="16" rx="2" fill="#F0B429"/>
+    <!-- Cross centre gem -->
+    <rect x="96" y="111" width="8" height="8" rx="1" fill="#FFFFFF" opacity="0.6"/>
+
+    <!-- Shield border highlight -->
+    <path d="M100 46 L148 64 L148 118 Q148 158 100 172 Q52 158 52 118 L52 64 Z" fill="none" stroke="#F0B429" stroke-width="2"/>
+
+    <!-- Star crown above shield -->
+    <polygon points="100,34 104,46 116,46 107,53 110,65 100,58 90,65 93,53 84,46 96,46" fill="#F0B429" stroke="#0D1F3C" stroke-width="0.8"/>
+
+    <!-- Banner ribbon below shield -->
+    <path d="M52 176 Q100 188 148 176 L148 182 Q100 194 52 182 Z" fill="#1A3A6B" stroke="#F0B429" stroke-width="1"/>
+    <text x="100" y="183" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.5" font-weight="700" fill="#F0B429" letter-spacing="0.8">FAITH · KNOWLEDGE · EXCELLENCE</text>
+
+    <!-- School name arc top -->
+    <path id="arcT" d="M 14,100 A 86,86 0 0,1 186,100" fill="none"/>
+    <text font-family="Arial,sans-serif" font-size="9.5" font-weight="700" fill="#FFFFFF" letter-spacing="1.2">
+      <textPath href="#arcT" startOffset="50%" text-anchor="middle">ABBIE PEAL OKIA MEMORIAL INSTITUTE</textPath>
+    </text>
+
+    <!-- Liberia arc bottom -->
+    <path id="arcB" d="M 22,108 A 80,80 0 0,0 178,108" fill="none"/>
+    <text font-family="Arial,sans-serif" font-size="8" font-weight="600" fill="#F0B429" letter-spacing="1.5">
+      <textPath href="#arcB" startOffset="50%" text-anchor="middle">MONROVIA · LIBERIA</textPath>
+    </text>
+
+    <!-- 8 gold dots at compass points -->
+    <circle cx="100" cy="4" r="2.5" fill="#F0B429"/>
+    <circle cx="100" cy="196" r="2.5" fill="#F0B429"/>
+    <circle cx="4" cy="100" r="2.5" fill="#F0B429"/>
+    <circle cx="196" cy="100" r="2.5" fill="#F0B429"/>
+    <circle cx="31" cy="31" r="2" fill="#F0B429"/>
+    <circle cx="169" cy="31" r="2" fill="#F0B429"/>
+    <circle cx="31" cy="169" r="2" fill="#F0B429"/>
+    <circle cx="169" cy="169" r="2" fill="#F0B429"/>
+  </symbol>
+</svg>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <svg viewBox="0 0 200 200" width="54" height="54"><use href="#apoim-logo"/></svg>
+    <div>
+      <div class="nav-brand-name">Abbie Peal Okia<br>Memorial Institute</div>
+      <div class="nav-brand-sub">🇱🇷 Monrovia, Liberia</div>
+    </div>
+  </a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#academics">Academics</a></li>
+    <li><a href="#fees">Fees</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-btn" href="#contact">Enroll Now</a>
+</nav>
+<div class="stripe"><div class="sr"></div><div class="sw"></div><div class="sb"></div></div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-inner">
+    <div class="hero-logo-wrap">
+      <svg viewBox="0 0 200 200" width="280" height="280"><use href="#apoim-logo"/></svg>
+    </div>
+    <div class="hero-text">
+      <div class="hero-badge">🇱🇷 Monrovia, Liberia · Est. in Honor &amp; Legacy</div>
+      <div class="hero-tagline">Faith · Knowledge · Excellence</div>
+      <h1>Abbie Peal Okia<br><span>Memorial Institute</span></h1>
+      <p>A premier institution dedicated to the academic achievement, cultural pride, and holistic development of Black Liberian students — honoring a great legacy and building tomorrow's leaders.</p>
+      <div class="hero-btns">
+        <a class="btn-gold" href="#fees">View School Fees</a>
+        <a class="btn-ghost" href="#facilities">Explore Campus</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>98%</strong><span>Pass Rate</span></div>
+        <div class="stat"><strong>500+</strong><span>Students</span></div>
+        <div class="stat"><strong>K–12</strong><span>Programs</span></div>
+        <div class="stat"><strong>6+</strong><span>Facilities</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-imgbox">
+      <div class="flag-bar">
+        <div style="background:var(--red)"></div><div style="background:var(--white)"></div>
+        <div style="background:var(--red)"></div><div style="background:var(--white)"></div>
+        <div style="background:var(--blue)"></div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80" alt="Students learning at APOIM"/>
+      <div class="about-badge">🏛️ In Honor of Abbie Peal Okia<br><span style="font-size:12px;font-weight:500;">A Legacy of Learning &amp; Faith</span></div>
+    </div>
+    <div>
+      <div class="stag">Our Story</div>
+      <h2>A School Born<br>From Legacy</h2>
+      <p style="color:var(--gray);font-size:16px;line-height:1.8;margin-bottom:28px;">The Abbie Peal Okia Memorial Institute was founded to honor a remarkable life and to ensure that future generations of Black Liberian students receive world-class education rooted in faith, identity, and purpose.</p>
+      <div class="values">
+        <div class="vi"><div class="vico">📖</div><div><h4>Academic Excellence</h4><p>Rigorous curriculum aligned with Liberian Ministry of Education standards, preparing every student for WAEC, BECE, and university entrance.</p></div></div>
+        <div class="vi"><div class="vico">✝️</div><div><h4>Faith &amp; Character</h4><p>Grounded in Christian values, we build integrity, discipline, and moral character so graduates serve God and country with distinction.</p></div></div>
+        <div class="vi"><div class="vico">🌍</div><div><h4>Liberian Identity &amp; Heritage</h4><p>Our programs celebrate Liberian history, African heritage, and cultural pride — every student knows their roots and stands tall in who they are.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section id="facilities">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:48px;">
+    <div><div class="stag">Campus Facilities</div><h2>Our World-Class<br>Campus</h2></div>
+    <p style="color:var(--gray);font-size:15px;line-height:1.8;max-width:380px;">Every space at APOIM is purpose-built to inspire curiosity, discipline, and excellence in every Liberian student.</p>
+  </div>
+  <div class="fac-grid">
+    <div class="fcard wide">
+      <img style="height:280px;" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1000&q=80" alt="Science Laboratory"/>
+      <div class="fcard-body">
+        <h3>🔬 Science &amp; Computer Laboratories</h3>
+        <p>Fully equipped biology, chemistry, physics, and computer science labs with 40 workstations and internet access. Students conduct hands-on experiments and research projects — building skills for STEM careers in Liberia and beyond.</p>
+        <span class="ftag">3 Labs · 40 Computer Stations · Modern Equipment</span>
+      </div>
+    </div>
+    <div class="fcard">
+      <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80" alt="Classrooms"/>
+      <div class="fcard-body">
+        <h3>🏫 Modern Classrooms</h3>
+        <p>Spacious, well-lit classrooms with chalkboards and student desks. Small class sizes ensure every learner receives individual attention from Kindergarten to Grade 12.</p>
+        <span class="ftag">20 Classrooms · Max 35 Students</span>
+      </div>
+    </div>
+    <div class="fcard">
+      <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=600&q=80" alt="Dining Hall"/>
+      <div class="fcard-body">
+        <h3>🍽️ Dining Hall &amp; Lunch Area</h3>
+        <p>A clean cafeteria serving fresh Liberian meals daily — rice, soup, greens, and protein. Safe, supervised indoor and outdoor shaded seating for all students.</p>
+        <span class="ftag">Seats 250 · Hot Meals Daily · Mon–Fri</span>
+      </div>
+    </div>
+    <div class="fcard">
+      <img src="https://images.unsplash.com/photo-1551958219-acbc595f27e2?w=600&q=80" alt="Sports Ground"/>
+      <div class="fcard-body">
+        <h3>⚽ Sports &amp; Athletics Ground</h3>
+        <p>Open sports fields for football, athletics, and PE. Our sports program builds teamwork, discipline, and physical wellness alongside academic achievement.</p>
+        <span class="ftag">Football · Track · PE · Basketball</span>
+      </div>
+    </div>
+    <div class="fcard">
+      <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80" alt="Library"/>
+      <div class="fcard-body">
+        <h3>📚 School Library</h3>
+        <p>Over 1,000 textbooks, reference materials, and reading books in a quiet, resourceful environment. Students use it for research, study groups, and reading clubs.</p>
+        <span class="ftag">1,000+ Volumes · Quiet Study Zone</span>
+      </div>
+    </div>
+    <div class="fcard">
+      <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?w=600&q=80" alt="Campus"/>
+      <div class="fcard-body">
+        <h3>🌳 Open Campus &amp; Grounds</h3>
+        <p>A secure, landscaped 5-acre campus with shaded gathering areas, assembly grounds, and green spaces for cultural events — a safe environment every family trusts.</p>
+        <span class="ftag">Gated · Secure · 5 Acres</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY STRIP -->
+<div class="gallery">
+  <div class="gallery-strip">
+    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=75" alt="Students"/>
+    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&q=75" alt="Classroom"/>
+    <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=400&q=75" alt="Lunch"/>
+    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=75" alt="Lab"/>
+    <img src="https://images.unsplash.com/photo-1551958219-acbc595f27e2?w=400&q=75" alt="Sports"/>
+    <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&q=75" alt="Library"/>
+  </div>
+</div>
+
+<!-- ACADEMICS -->
+<section class="academics" id="academics">
+  <div class="stag">Curriculum</div>
+  <h2>Academic Programs</h2>
+  <p class="sub">Aligned with the Liberian Ministry of Education — Kindergarten through Grade 12, with a focus on excellence, faith, and purpose at every stage.</p>
+  <div class="prog-grid">
+    <div class="pcard"><div class="icon">🔢</div><h4>Mathematics</h4><p>Foundational numeracy through advanced algebra, geometry, and statistics for senior students.</p></div>
+    <div class="pcard"><div class="icon">🧪</div><h4>Science &amp; Biology</h4><p>Hands-on lab work in biology, chemistry, and physics from junior levels upward.</p></div>
+    <div class="pcard"><div class="icon">✍️</div><h4>English Language</h4><p>Reading, writing, comprehension, and literature — building confident, articulate communicators.</p></div>
+    <div class="pcard"><div class="icon">🌍</div><h4>Liberian &amp; African Studies</h4><p>History, civics, geography, and social studies rooted in Liberian and African heritage.</p></div>
+    <div class="pcard"><div class="icon">💻</div><h4>ICT &amp; Computer Studies</h4><p>Digital literacy, computer applications, and basic coding for the modern economy.</p></div>
+    <div class="pcard"><div class="icon">✝️</div><h4>Christian Religious Studies</h4><p>Bible studies, moral education, and character development grounded in Christian faith.</p></div>
+    <div class="pcard"><div class="icon">⚽</div><h4>Physical Education</h4><p>Structured sports, fitness, and health education for holistic student development.</p></div>
+    <div class="pcard"><div class="icon">🎓</div><h4>WAEC / BECE Prep</h4><p>Dedicated senior preparation for West African examinations and university entrance guidance.</p></div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="fees" id="fees">
+  <div class="stag">School Fees</div>
+  <h2>Tuition &amp; Fees</h2>
+  <p class="sub">Transparent, affordable fees in USD and Liberian Dollars. Term payment plans available for all families. Sibling discounts apply.</p>
+  <div class="fees-grid">
+    <div class="feecard">
+      <div class="ftier">Primary Level · Kindergarten – Grade 6</div>
+      <div class="fcurr">USD per Academic Year</div>
+      <div class="famt">$180</div>
+      <div class="fperiod">≈ LRD 34,000 · Payable by term</div>
+      <ul class="fitems">
+        <li>Full primary curriculum (K – Grade 6)</li>
+        <li>Core textbooks &amp; exercise books</li>
+        <li>Classroom &amp; library access</li>
+        <li>Daily hot lunch (Mon – Fri)</li>
+        <li>School uniform (2 sets included)</li>
+        <li>National examination registration</li>
+        <li>Sports &amp; cultural activities</li>
+      </ul>
+      <a class="fbtn out" href="#contact">Enroll Your Child</a>
+    </div>
+    <div class="feecard feat">
+      <div class="ftier">Junior High · Grades 7 – 9</div>
+      <div class="fcurr">USD per Academic Year</div>
+      <div class="famt">$240</div>
+      <div class="fperiod">≈ LRD 45,000 · Payable by term</div>
+      <ul class="fitems">
+        <li>Full junior high curriculum</li>
+        <li>All textbooks &amp; lab materials</li>
+        <li>Science laboratory sessions</li>
+        <li>Computer lab access (weekly)</li>
+        <li>Daily hot lunch plan included</li>
+        <li>School uniform (2 sets included)</li>
+        <li>Sports program &amp; extracurriculars</li>
+        <li>BECE preparation support</li>
+      </ul>
+      <a class="fbtn" href="#contact">Enroll Your Child</a>
+    </div>
+    <div class="feecard">
+      <div class="ftier">Senior High · Grades 10 – 12</div>
+      <div class="fcurr">USD per Academic Year</div>
+      <div class="famt">$320</div>
+      <div class="fperiod">≈ LRD 60,000 · Payable by term</div>
+      <ul class="fitems">
+        <li>Full senior high curriculum</li>
+        <li>All textbooks &amp; lab materials</li>
+        <li>Full lab &amp; computer lab access</li>
+        <li>WAEC exam registration fee</li>
+        <li>University counseling sessions</li>
+        <li>Daily hot lunch plan included</li>
+        <li>Leadership &amp; debate programs</li>
+      </ul>
+      <a class="fbtn out" href="#contact">Enroll Your Child</a>
+    </div>
+  </div>
+  <div class="fee-note">
+    💛 Sibling discounts available · Term payment accepted · Scholarship inquiries welcome<br>
+    📞 For fee assistance call: <strong style="color:var(--gold);font-size:15px;">+231 775 218 264</strong>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="stag">Community Voices</div>
+  <h2>What Our Community Says</h2>
+  <p class="sub">Hear from the parents, students, and teachers who make APOIM a family.</p>
+  <div class="tgrid">
+    <div class="tcard">
+      <div class="quote">"</div>
+      <p>My daughter joined APOIM in Grade 7 and came home every day excited to learn. The teachers are dedicated and the school truly cares about our children. This institute is a blessing to Liberia.</p>
+      <div class="author"><div class="avatar">👩🏿</div><div><div class="aname">Fatu Kamara</div><div class="arole">Parent · Grade 9 Student</div></div></div>
+    </div>
+    <div class="tcard">
+      <div class="quote">"</div>
+      <p>The science lab and computer class changed everything for me. I had never used a computer before. Now I want to study engineering at university. APOIM gave me that dream and the skills to chase it.</p>
+      <div class="author"><div class="avatar">👦🏿</div><div><div class="aname">Emmanuel Kollie</div><div class="arole">Student · Grade 11</div></div></div>
+    </div>
+    <div class="tcard">
+      <div class="quote">"</div>
+      <p>As a teacher, this school is where I belong. The administration invests in us, the students are eager, and the facilities make teaching a joy. APOIM is truly building Liberia's future — one child at a time.</p>
+      <div class="author"><div class="avatar">👩🏿‍🏫</div><div><div class="aname">Mrs. Binah Sumo</div><div class="arole">Mathematics Teacher</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<div class="cta" id="contact">
+  <div>
+    <div class="stag" style="color:var(--gold);">Admissions Open</div>
+    <h2>Join the APOIM Family</h2>
+    <p>Enroll your child in one of Liberia's most dedicated schools. Admissions are open for the new academic year. Contact us today — spaces are limited.</p>
+    <div style="margin-top:20px;color:rgba(255,255,255,.55);font-size:13px;line-height:2.2;">
+      📍 Monrovia, Liberia<br>
+      🕐 Monday – Friday · 8:00am – 5:00pm (WAT)<br>
+      📧 apoim.institute@gmail.com
+    </div>
+  </div>
+  <div class="cta-btns">
+    <a class="cta-call" href="tel:+231775218264">📞 +231 775 218 264</a>
+    <a class="cta-wa" href="https://wa.me/231775218264" target="_blank">💬 WhatsApp Us Directly</a>
+    <p style="color:rgba(255,255,255,.4);font-size:11px;text-align:center;margin-top:4px;">Tap to call or message instantly</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-flag">
+    <div class="fr"></div><div class="fw"></div><div class="fr"></div><div class="fw"></div>
+    <div class="fr"></div><div class="fw"></div><div class="fr"></div><div class="fw"></div>
+    <div class="fr"></div><div class="fw"></div><div class="fb"></div>
+  </div>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+        <svg viewBox="0 0 200 200" width="48" height="48"><use href="#apoim-logo"/></svg>
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:14px;color:var(--white);font-weight:700;line-height:1.3;">Abbie Peal Okia<br>Memorial Institute</div>
+          <div style="font-size:10px;color:var(--gold);letter-spacing:2px;font-weight:600;margin-top:2px;">🇱🇷 LIBERIA</div>
+        </div>
+      </div>
+      <p>Honoring a legacy. Educating a generation. Building a better Liberia — one student at a time. Abbie Peal Okia lives on through every child who walks through our doors.</p>
+    </div>
+    <div>
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="#about">About APOIM</a></li>
+        <li><a href="#academics">Academic Programs</a></li>
+        <li><a href="#facilities">Our Facilities</a></li>
+        <li><a href="#fees">School Fees</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Facilities</h5>
+      <ul>
+        <li><a href="#">Science Labs</a></li>
+        <li><a href="#">Classrooms</a></li>
+        <li><a href="#">Dining Hall</a></li>
+        <li><a href="#">Sports Ground</a></li>
+        <li><a href="#">Library</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+231775218264">📞 +231 775 218 264</a></li>
+        <li><a href="https://wa.me/231775218264">💬 WhatsApp</a></li>
+        <li><a href="#">📍 Monrovia, Liberia</a></li>
+        <li><a href="#">Mon–Fri: 8am – 5pm</a></li>
+        <li><a href="#">apoim.institute@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span style="color:rgba(255,255,255,.4);">© 2025 Abbie Peal Okia Memorial Institute · Monrovia, Liberia. All rights reserved.</span>
+    <span style="color:var(--gold);">🇱🇷 Building Liberia's Future</span>
+  </div>
+</footer>
+
+</body>
+</html>
